@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Não reescreve se for arquivo ou pasta real
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Redireciona chamadas para /api para routes.php
+RewriteRule ^api/(.*)$ /api/routes.php [QSA,L]

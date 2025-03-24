@@ -1,0 +1,210 @@
+
+
+body, html {
+  overflow-x: hidden;
+  padding-right: 0 !important;
+}
+
+
+/* 🌙 Modo Escuro */
+:root {
+  --bg-start: #1c1c1e;
+  --bg-end: #19191b;
+  --text-light: #f5f5f7;
+  --text-muted: #a1a1aa;
+  --text-placeholder: #6b7280;
+  --text-filters: #f5f5f7;
+  --text-filters-active: #ffffff;
+  --text-button: #f5f5f7;
+
+  --input-bg: #232326;
+  --filter-bg: #3f3f46;
+  --filter-active-bg: #4f46e5;
+
+  --button-create-bg: #28a745;
+
+  --task-card-bg: #232326;
+  --task-title: #f5f5f7;
+  --task-status-pending: #facc15;
+  --task-status-done: #28a745;
+
+  --checkbox-border: #ffffff;
+  --checkbox-bg: #3f3f46;
+  --checkbox-checked: #28a745;
+
+  --ellipsis-color: #f5f5f7;
+}
+
+/* Corpo da página */
+body {
+  background: linear-gradient(90deg, var(--bg-start), var(--bg-end));
+  color: var(--text-light);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Título */
+h1 {
+  color: var(--text-light);
+  font-size: 2rem;
+}
+
+/* Inputs */
+input.form-control,
+textarea.form-control {
+  background-color: var(--input-bg) !important;
+  color: var(--text-light) !important;
+  border: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-placeholder) !important;
+}
+
+input.form-control:focus,
+textarea.form-control:focus {
+  border: none !important;
+  border-color: none !important;
+  box-shadow: 0 0 0 2px var(--filter-active-bg);
+  background-color: var(--input-bg) !important;
+}
+
+
+/* Botão de criar tarefa */
+.btn-success {
+  background-color: var(--button-create-bg);
+  color: var(--text-button);
+  border: none;
+}
+
+.btn-success:hover {
+  filter: brightness(1.1);
+}
+
+/* Filtros */
+.btn-filter {
+  background-color: var(--filter-bg);
+  color: var(--text-filters);
+  border: none;
+  padding: 0.2rem 1rem;
+  border-radius: 8px;
+}
+
+.btn-filter.active {
+  background-color: var(--filter-active-bg);
+  color: var(--text-filters-active);
+}
+
+/* Card da tarefa */
+.task-card {
+  background-color: var(--task-card-bg);
+  border: none;
+  padding: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.task-card strong {
+  color: var(--task-title);
+}
+
+.task-desc {
+  color: var(--text-muted) !important;
+}
+
+.task-card small {
+  color: var(--text-muted) !important;
+}
+
+/* Status Badge */
+.badge.bg-warning {
+  background-color: var(--task-status-pending) !important;
+  color: #000 !important;
+}
+
+.badge.bg-success {
+  background-color: var(--task-status-done) !important;
+}
+
+/* Checkbox customizado */
+input[type="checkbox"].form-check-input {
+  border: 2px solid var(--checkbox-border);
+  background-color: var(--checkbox-bg);
+  cursor: pointer;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+input[type="checkbox"].form-check-input:checked {
+  background-color: var(--checkbox-checked);
+  border-color: var(--checkbox-checked);
+}
+
+/* Ellipsis e menu */
+.dropdown .btn i {
+  color: var(--ellipsis-color);
+  font-size: 1.2rem;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+
+.modal-content {
+  background-color: #232326;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  color: #f5f5f7;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+.modal-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+input.is-invalid {
+  border: 1px solid #dc3545 !important;
+  box-shadow: none;
+}
+
+
+
+.toastify {
+  font-size: 0.9rem;
+}
+
+#task-modal .modal-content {
+  background-color: #232326;
+  color: #f5f5f7;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.modal-dialog-centered {
+  display: flex
+;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100% - var(--bs-modal-margin)* 2);
+}
+
+.placeholder-task{
+  background-color: none !important;
+}
+
+.list-group-item {
+  /* position: relative; */
+  display: block;
+  background-color: none !important;
+  text-decoration: none;
+}
