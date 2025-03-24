@@ -49,3 +49,4 @@ Aplicação web de gerenciamento de tarefas (To-Do List), com backend em PHP + M
 git clone https://github.com/luanlucolli/todo-list.git
 cd todo-list
 docker-compose up --build
+e pronto, está rodando em http://localhost:8000
