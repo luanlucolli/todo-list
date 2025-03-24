@@ -1,70 +1,51 @@
-# Noto-a 🗒️
+# Noto-a
 
-**Noto-a** é uma aplicação web de gerenciamento de tarefas (To-Do List) moderna, responsiva e minimalista, construída com foco em performance, UX e boas práticas de desenvolvimento front-end. Toda a interface é construída com **modo escuro absoluto**, inspirado em ambientes produtivos como Notion e interfaces iOS.
+Aplicação web de gerenciamento de tarefas (To-Do List), com backend em PHP + MySQL e frontend responsivo em HTML, CSS e JavaScript. O sistema é entregue dockerizado, com foco em organização de código, desempenho e experiência do usuário.
 
 ---
 
-## Tecnologias Utilizadas
+## Tecnologias
 
-- **HTML5 Semântico**
-- **CSS3 com Custom Properties (variáveis CSS)**
-- **JavaScript Puro (ES6+)**
-- **Bootstrap 5.3** (componentes, grid, modais)
-- **Toastify.js** (feedback visual com toasts)
-- **PHP (Back-end REST)**
-- **MySQL (persistência de dados)**
-- **Docker + docker-compose** para ambiente isolado e reprodutível
+- HTML5, CSS3 (Custom Properties)
+- JavaScript (ES6+)
+- Bootstrap 5.3
+- Toastify.js
+- PHP 8.1 (API RESTful)
+- MySQL 5.7
+- Apache + Docker + Docker Compose
+- phpMyAdmin (opcional)
 
 ---
 
 ## Funcionalidades
 
-- CRUD completo de tarefas
-- Criação e edição via modal sobreposto
-- Exclusão com modal de confirmação estilo iOS
+- Criação, edição e exclusão de tarefas
+- Marcar como concluída ou pendente
+- Filtro por status (Todos, Pendentes, Concluídas)
 - Pesquisa em tempo real por título
-- Filtros por status: Todos, Pendentes, Concluídas
-- Feedbacks com toasts para ações (validação, sucesso, erro)
-- Armazenamento persistente com API REST em PHP + MySQL
-- Interface 100% responsiva (desktop, tablets e mobile)
+- Modais para criação/edição e confirmação de exclusão
+- Validação de campos com feedback visual
+- Toasts para ações (sucesso, erro)
+- Interface responsiva com dark mode fixo
 
 ---
 
-## Decisões de Arquitetura
+## Arquitetura
 
-### 1. **Separação por Responsabilidades**
-- `index.html`: estrutura semântica e componentes Bootstrap.
-- `style.css`: design system completo com dark mode fixo.
-- `app.js`: controle de estado da UI, requisições, renderização e eventos.
-- `routes.php` e `TaskController.php`: back-end RESTful simples e desacoplado.
-
-### 2. **Estado Local Controlado (Frontend)**
-- Tarefas são carregadas uma vez e mantidas em memória.
-- Filtros e busca são aplicados no lado do cliente para ganho de performance.
-- Evita chamadas desnecessárias à API.
-
-### 3. **UX Prioritária**
-- Feedback instantâneo ao digitar ou clicar.
-- Validação visual clara com bordas vermelhas.
-- Modal de confirmação elegante antes da exclusão.
-- Toasts para interações bem resolvidas.
-
-### 4. **Dark Mode Fixo**
-- O design foi propositalmente feito apenas para o **modo escuro**, com um gradiente de fundo linear (`#1c1c1e → #19191b`), inputs escuros e tipografia clara, visando conforto visual e foco.
+- API REST PHP desacoplada (`/api`)
+- Frontend servido via Apache (`/`)
+- Backend estruturado em rotas + controller
+- Banco inicializado via script SQL (`init.sql`)
+- Separação clara entre front e back (pasta `frontend/` e `backend/`)
+- Ambientes configurados via Docker Compose
 
 ---
 
-## Como Rodar o Projeto
+## Como executar
 
-### Requisitos:
-- [Docker](https://www.docker.com/) instalado
-
-### Etapas:
+> Requisitos: Docker instalado
 
 ```bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/noto-a.git
-cd noto-a
-
-# Suba a aplicação
+git clone https://github.com/luanlucolli/todo-list.git
+cd todo-list
 docker-compose up --build
