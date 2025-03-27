@@ -43,7 +43,7 @@ Aplicação web de gerenciamento de tarefas (To-Do List), com backend em PHP + M
 
 ## Como executar
 
-> Requisitos: Docker instalado
+> Requisitos: Docker instalado e aberto
 
 ```bash
 git clone https://github.com/luanlucolli/todo-list.git
